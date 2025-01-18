@@ -1,0 +1,13 @@
+# Environment and secrets
+.env
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Mac specific (since you're on a MacBook)
+.DS_Store
+
+# VS Code (if you're using it)
+.vscode/
