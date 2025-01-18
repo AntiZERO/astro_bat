@@ -12,13 +12,12 @@ class AstroBat(discord.Client):
         self.nasa = NASANews(NASA_API_KEY)
         self.astronomy_channel = None
         self.guild = None
-        self.check_space_news = self.check_space_news_loop
-        
+
         # Future feature ideas:
         # - Track ISS passes over Austin
         # - Local stargazing conditions
         # - ACC Astronomy Club event reminders
-        
+
     async def setup_hook(self):
         self.check_space_news.start()
     
@@ -32,7 +31,7 @@ class AstroBat(discord.Client):
                 self.guild = self.guilds[0]
 
                 # Get the astronomy channel from the guild
-                self.astronomy_channel = self.guild.get_channel(ASTRONOMY_CHANNEL_ID)
+                self.astronomy_channel = self.guild.get_channel(1329879543585968229)
                 if self.astronomy_channel is None:
                     print(f"{BOT_EMOJI} Lost in space - can't find the 'astronomy' channel!")
             else:
