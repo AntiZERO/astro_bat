@@ -31,7 +31,7 @@ class AstroBat(discord.Client):
                 self.guild = self.guilds[0]
 
                 # Get the astronomy channel from the guild
-                self.astronomy_channel = self.guild.get_channel(1329879543585968229)
+                self.astronomy_channel = self.guild.get_channel(ASTRONOMY_CHANNEL_ID)
                 if self.astronomy_channel is None:
                     print(f"{BOT_EMOJI} Lost in space - can't find the 'astronomy' channel!")
             else:
