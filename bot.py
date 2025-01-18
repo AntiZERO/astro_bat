@@ -1,5 +1,6 @@
 # Patch audioop before importing discord
 import audioop_patch
+import asyncio
 import discord
 from discord.ext import tasks
 from config import *
@@ -30,10 +31,11 @@ class AstroBat(discord.Client):
                 # Get the guild (server) object
                 self.guild = self.guilds[0]
 
+                await asyncio.sleep(5)  # Wait for 5 seconds
                 # Get the astronomy channel from the guild
                 self.astronomy_channel = self.guild.get_channel(ASTRONOMY_CHANNEL_ID)
                 if self.astronomy_channel is None:
-                    print(f"{BOT_EMOJI} Lost in space - can't find the 'astronomy' channel!")
+                    print(f"{BOT_EMOJI} Lost in space - can't find the 'astro-news' channel!")
             else:
                 print(f"{BOT_EMOJI} Lost in space - the bot is not connected to any servers!")
         except Exception as e:
@@ -43,7 +45,7 @@ class AstroBat(discord.Client):
     async def check_space_news(self):
         try:
             if self.astronomy_channel is None:
-                print(f"{BOT_EMOJI} Lost in space - can't find the 'astronomy' channel!")
+                print(f"{BOT_EMOJI} Lost in space - can't find the 'astro-news' channel!")
                 return
 
             nasa_post = await self.nasa.get_astronomy_pic()
