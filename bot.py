@@ -1,3 +1,5 @@
+# Patch audioop before importing discord
+import audioop_patch
 import discord
 from discord.ext import tasks
 from config import *
