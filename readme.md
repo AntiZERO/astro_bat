@@ -6,4 +6,8 @@ Astrobat is designed for the use of Austin Community College's Astronomy Club fo
 Current Functionality in v1.0:
 - "Should" utilize NASAs API to provide the Astronomy Picture of the Day into the correct discord channel.
 
+
+Current APIs Used:
+- NASA Public API (https://api.nasa.gov/)
+
 More to come!
